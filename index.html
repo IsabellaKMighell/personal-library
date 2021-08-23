@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="app.css" />
+        <script src="index.js"></script>
+        <title>Personal Library</title>
+    </head>
+
+    <body>
+        <div class="display-container">
+            <div id="header">
+                <h1>Library</h1>
+                <p>Keep track of what to read next using a virtual library</p>
+            </div>
+            <div id="book-form-container">
+                <form id="book-form">
+                    <label><strong>Book Title: </strong></label>
+                    <input type="text" id="name-input" />
+                    <input type="submit" value="Submit" />
+                    </form>
+            </div>
+            <div class="book-display">
+                <div id="detailed-info">
+                    <img
+                        id="image"
+                        src="assets/dummy.gif"
+                        alt="Book Title"
+                    />
+                    
+                    <p> 
+                        <button id="add-to-library"></button>
+                        <span>Book Title</span>
+                        <button id="favorite"></button>
+                    </p>
+                    
+                    <p>Book Description</p>
+
+                </div>
+    
+            </div>
+        </div>
+        <div class="library">
+            <div id="favorite-books">
+                <h4>Favorite Books</h4>
+
+            </div>
+            <div id="want-to-read">
+                <h4>Books to Read</h4>
+
+            </div>
+
+        </div>
+        
+    </body>
+
+</html>
