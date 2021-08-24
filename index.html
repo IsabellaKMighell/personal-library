@@ -7,10 +7,8 @@
         <link rel="stylesheet" href="style.css" />
         <script defer type="module" src="./library.js"></script>
         <script defer type="module" src="./config.js"></script>
-
         <title>Personal Library</title>
     </head>
-
     <body>
         <div class="display-container">
             <div id="header">
@@ -27,40 +25,28 @@
             <div class="book-display">
                 <div id="detailed-info">
                     <img src="http://books.google.com/books/content?id=GHMnz8G0GTcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" alt="">
-                    <p> 
+                    <p>
                         <strong><button id="add-to-library">▻</button></strong>
                         <span>John Adams</span>
                         <strong><button id="favorite">♡</button></strong>
                     </p>
-                    
                     <p>Chronicles the life of America's second president, including his youth, his career as a Massachusetts farmer and lawyer, his marriage to Abigail, his rivalry with Thomas Jefferson, and his influence on the birth of the United States.</p>
-
                 </div>
-    
             </div>
         </div>
         <div class="library">
             <div id="favorite-books">
                 <h4>Favorite Books</h4>
-                <div class="flex-container">
-                    <div>1</div>
-                    <div>2</div>
+                <div id='faves' class="flex-container">
                     <!--add favorites here-->
                 </div>
-
             </div>
             <div id="want-to-read">
                 <h4>Books to Read</h4>
-                <div class="flex-container">
-                    <!--add to Library here-->
-                    <div>1</div>
-                    <div>2</div>
+                <div id="to-read" class="flex-container">
+                    <!--add favorites here-->
                 </div>
-
             </div>
-
         </div>
-        
     </body>
-
 </html>
