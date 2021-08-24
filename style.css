@@ -3,7 +3,10 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.display-container{
+    background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg")
 
+}
 input[type="submit" i] {
     border-radius: 12 px;
     background-color: rgb(43, 153, 226);

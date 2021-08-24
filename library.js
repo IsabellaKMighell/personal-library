@@ -1,4 +1,23 @@
-//export 
+ 
+const form = document.querySelector("#book-form")
+form.addEventListener("submit", e=>{
+    e.preventDefault();
+    const userInput = e.target[0].value
+    console.log(userInput)
+    form.reset();
+})
+
+const libraryButton = document.querySelector("#add-to-library");
+libraryButton.addEventListener('click', e=>{
+    libraryButton.innerText = "✓"
+})
+
+const favoriteButton = document.querySelector("#favorite")
+favoriteButton.addEventListener('click', e=>{
+    favoriteButton.innerText = "❤"
+})
+
+//export
 import { yourAPIKey } from './config.js';
 const title ='john adams'
 
