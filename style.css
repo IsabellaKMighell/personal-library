@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+input[type="submit" i] {
+    border-radius: 12 px;
+    background-color: rgb(43, 153, 226);
+    color: white;
+    text-align: center;
+    border-width: 1px;
+}
+
+.button, #add-to-library{
+    border-radius: 50%;
+    background-color: rgb(43, 153, 226);
+    color: white;
+    border-width: 1px;
+}
+.button, #favorite{
+    border-radius: 50%;
+    background-color: rgb(43, 153, 226);
+    color:rgb(255, 198, 208);
+    border-width: 1px ;
+
+}
+
+
