@@ -35,12 +35,18 @@ fetch(info)
 
 function renderBooks(books){
     books.forEach(element => {
-        console.log(element)
-        console.log(element.volumeInfo.title)
-        console.log(element.volumeInfo.authors)
-        console.log(element.volumeInfo.description)
-        console.log(element.volumeInfo.imageLinks.thumbnail)
-        
+        // console.log(element)
+        // console.log(element.volumeInfo.title)
+        // console.log(element.volumeInfo.authors)
+        // console.log(element.volumeInfo.description)
+        // console.log(element.volumeInfo.imageLinks.thumbnail)
+        const book = {
+            title: element.volumeInfo.title,
+            authors: element.volumeInfo.authors,
+            description: element.volumeInfo.description,
+            imageLinks: element.volumeInfo.imageLinks.thumbnail
+        }
+        console.log(book)
     });
 }
 console.log(info)
