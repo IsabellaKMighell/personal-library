@@ -1,5 +1,5 @@
 //export 
-import { yourAPIKey } from 'config.js';
+import { yourAPIKey } from './config.js';
 const title ='john adams'
 
 
