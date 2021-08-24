@@ -30,3 +30,16 @@ input[type="submit" i] {
 }
 
 
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+  }
+
+.flex-container > div {
+    background-color: #f3f3f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+
