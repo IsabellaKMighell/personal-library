@@ -8,7 +8,36 @@
       "description": "Chronicles the life of America's second president, including his youth, his career as a Massachusetts farmer and lawyer, his marriage to Abigail, his rivalry with Thomas Jefferson, and his influence on the birth of the United States.",
       "imageLinks": "http://books.google.com/books/content?id=GHMnz8G0GTcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
       "id": 1
+    },
+    {
+      "title": "John Adams",
+      "authors": [
+        "John Patrick Diggins",
+        "Professor John Patrick Diggins"
+      ],
+      "description": "Profiles John Adams as an ideal successor to Washington, citing the qualities of his character and Federalist policies that enabled him to address the challenges that took place during his presidency, and crediting him with such achievements as the creation of the Department of the Navy and the establishment of a solvent treasury. 25,000 first printing.",
+      "imageLinks": "http://books.google.com/books/content?id=sa_-58fpwpkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "id": 2
+    },
+    {
+      "title": "Great Expectations",
+      "authors": [
+        "Charles Dickens"
+      ],
+      "description": "Pip is a young blacksmith s apprentice, who is one day accosted by an escaped convict, who he aids by providing him with food and a file. Soon after, he is called upon by the mysterious and wealthy Miss Havisham to entertain her. He meets the beautiful but stubborn Estella at the home of Miss Havisham and develops feelings toward her. Later, Pip is sent to London and receives financial support from an unexpected benefactor...Classics Illustrated tells this wonderful tale in colorful comic strip form, offering an excellent introduction for younger readers. This edition also includes a timeline of technological progress in Dickens s lifetime and study questions, which can be used both in the classroom and at home to further engage the reader in the story.The Classics Illustrated comic book series began in 1941 with its first issue, Alexandre Dumas \"The Three Musketeers,\" and has since included over 200 classic tales released around the world. This new CCS Books edition is specifically tailored to engage and educate young readers with some of the greatest works ever written, while still thrilling older readers who have loving memories of this series of old.\"",
+      "imageLinks": "http://books.google.com/books/content?id=mV1UjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "id": 3
     }
   ],
-  "library": []
+  "library": [
+    {
+      "title": "Moby Dick",
+      "authors": [
+        "Herman Melville"
+      ],
+      "description": "Moby Dick in half the time Moby Dick is the tale of one man's fatal obsession and his willingness to sacrifice his life and that of his crew to achieve his goal. The story follows the fortunes of Captain Ahab and the eccentric crew of a whaling ship, The Pequod. The ship is on its last voyage in pursuit of Moby Dick - the great white whale which wounded Ahab in the past is his quarry now. The battle with the elements, the sea, the dangerous confrontations of the whale hunts are embodied in the thrilling narration of the survivor Ishmael.",
+      "imageLinks": "http://books.google.com/books/content?id=pSA4AgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "id": 1
+    }
+  ]
 }

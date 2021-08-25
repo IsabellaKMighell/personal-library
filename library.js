@@ -74,18 +74,35 @@ function renderBooks(books){
         bookList.appendChild(detailedInfo)
 
        libraryButton.addEventListener('click',  e=>{
-            addToRead(book)
-            //postToJsonLibrary(book)
+            libraryButton.innerText='✓'
+            fetch("http://localhost:3000/library", {
+            method: "POST",
+            headers:{
+            "Content-Type":"application/json"
+            },
+            body:JSON.stringify(book)
+    })
        })
        
 
        faveButton.addEventListener('click', e=>{
-            addToFavorite(book)
-            //postToJsonFavorites(book)
+            faveButton.innerText = '❤'
+            fetch("http://localhost:3000/favorites", {
+            method: "POST",
+            headers:{
+            "Content-Type":"application/json"
+            },
+            body:JSON.stringify(book)
+    })
+            
         })
 
     })
 }
+
+fetch("http://localhost:3000/library")
+    .then(resp => resp.json())
+    .then(books => books.forEach(book=> addToRead(book)))
 
 function addToRead(book){
     console.log(`clicked addToLibrary     ${book.title}`)
@@ -107,6 +124,11 @@ function addToRead(book){
 
 
 }
+
+fetch("http://localhost:3000/favorites")
+    .then(resp => resp.json())
+    .then(books => books.forEach(book=> addToFavorite(book)))
+
 function addToFavorite(book){
     console.log(`clicked favorite     ${book.title}`)
     const favoritesFlexContainer = document.querySelector("#faves")
@@ -125,27 +147,3 @@ function addToFavorite(book){
     favoritesFlexContainer.style.display="flex"
 }
 
-/*
-function postToJsonLibrary(book){
-    fetch("http://localhost:3000/library", {
-        method: "POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(book)
-    })
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-}
-
-function postToJsonFavorites(book){
-    fetch("http://localhost:3000/favorites", {
-        method: "POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify(book)
-    })
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-}*/
