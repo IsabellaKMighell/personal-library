@@ -16,18 +16,7 @@ form.addEventListener("submit", e=>{
    renderBooks(data.items)
     })
 })
-// const libraryButton = document.querySelector("#add-to-library");
-// libraryButton.addEventListener('click', e=>{
-//     libraryButton.innerText = "✓"
-//     favoriteDiv = document.querySelector("#favorite-books > div")
-//     const bookTitle = document.querySelector("#detailed-info > p:nth-child(2) > span")
-//     favoriteDiv.innerHTML = `<img src="queryselector" /> <div>queryselectTitle</div>`
-// })
-// const favoriteButton = document.querySelector("#favorite")
-// favoriteButton.addEventListener('click', e=>{
-//     favoriteButton.innerText = ":heart:"
-// })
-//export
+
 
 
 function renderBooks(books){
@@ -43,61 +32,58 @@ function renderBooks(books){
         //console.log(bookList)
         const detailedInfo = document.createElement('div')
         detailedInfo.id = 'detailed-info'
-        detailedInfo.innerHTML = `
-            <img src="${book.imageLinks}" alt="">
-            <p>
-            <strong><button id="add-to-library">▻</button></strong>
-            <span>${book.title}</span>
-            <strong><button id="favorite">♡</button></strong>
-            </p>
-            <p value="">${book.description}</p>
-        
-        `
-        bookList.appendChild(detailedInfo)
-        
-       const addToLibrary = detailedInfo.querySelector('#add-to-library')
-       const favorite = detailedInfo.querySelector('#favorite')
 
-       addToLibrary.addEventListener('click',  e=>{
+        
+        //image element
+        const img = document.createElement('img')
+        img.src = book.imageLinks
+
+        //buttons and book title
+        const buttonsAndTitle = document.createElement('div')
+
+        const libraryButton = document.createElement('button')
+        libraryButton.innerText = "▻"
+        libraryButton.id = "add-to-library"
+
+        const bookTitleElement = document.createElement('span')
+        bookTitleElement.innerText = book.title
+
+        const faveButton = document.createElement('button')
+        faveButton.innerText = '♡'
+        faveButton.id = "favorite"
+
+        buttonsAndTitle.append(libraryButton, bookTitleElement, faveButton)
+        
+
+        const imgTitleDiv = document.createElement('div')
+        imgTitleDiv.append(img, buttonsAndTitle)
+        
+        
+
+
+        //book description
+        const bookDescription = document.createElement('div')
+        bookDescription.innerText = book.description
+        
+    
+
+        detailedInfo.append(imgTitleDiv ,bookDescription)
+        detailedInfo.style.display = "flex"
+        detailedInfo.style.padding = '10px'
+
+        bookList.appendChild(detailedInfo)
+
+       libraryButton.addEventListener('click',  e=>{
             addToRead(book)
+            //postToJsonLibrary(book)
        })
        
 
-       favorite.addEventListener('click', e=>{
-            addTofavorite(book)
+       faveButton.addEventListener('click', e=>{
+            addToFavorite(book)
+            //postToJsonFavorites(book)
         })
 
-//         const bookTitle = document.querySelector("#detailed-info > p:nth-child(2) > span")
-//         bookTitle.innerText = element.volumeInfo.title
-//         const bookImage = document.querySelector("#detailed-info > img")
-//         bookImage.src = element.volumeInfo.imageLinks.thumbnail
-//         const bookDes = document.querySelector("#detailed-info > p:nth-child(3)")
-//         bookDes.innerText = element.volumeInfo.description
-//         const book = {
-//             title: element.volumeInfo.title,
-//             authors: element.volumeInfo.authors,
-//             description: element.volumeInfo.description,
-//             imageLinks: element.volumeInfo.imageLinks.thumbnail
-//         }
-//         console.log(book)
-//         const libraryButton = document.querySelector("#add-to-library");
-//         libraryButton.addEventListener('click', e=>{
-//         libraryButton.innerText = "✓"
-//         // const addBooks = document.querySelector("#to-read")
-//         const libraryDiv = document.querySelector("#want-to-read")
-//         const newLibraryDiv = document.createElement('div')
-//         newLibraryDiv.innerHTML = `<img src=${book.imageLinks} /> <div>${book.title}</div>`
-//         // addBooks.append(libraryDiv)
-//         libraryDiv.appendChild(newLibraryDiv)
-//     });
-//         const favoriteButton = document.querySelector("#favorite")
-//         favoriteButton.addEventListener('click', e=>{
-//         favoriteButton.innerText = ":heart:"
-//         const favoriteDiv = document.querySelector("#favorite-books > div")
-//         // const
-//         favoriteDiv.innerHTML = `<img src=${book.imageLinks} /> <div>${book.title}</div>`
-//         addBooks.append(favoriteDiv)
-// })
     })
 }
 
@@ -111,7 +97,7 @@ function addToRead(book){
 
 
 }
-function addTofavorite(book){
+function addToFavorite(book){
     console.log(`clicked favorite     ${book.title}`)
     const favoriteBooks = document.querySelector('#favorite-books')
     const faves = document.createElement('div')
@@ -119,3 +105,28 @@ function addTofavorite(book){
     faves.innerHTML = `<img src=${book.imageLinks} /> <div>${book.title}</div>`
     favoriteBooks.appendChild(faves)
 }
+
+/*
+function postToJsonLibrary(book){
+    fetch("http://localhost:3000/library", {
+        method: "POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(book)
+    })
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+}
+
+function postToJsonFavorites(book){
+    fetch("http://localhost:3000/favorites", {
+        method: "POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(book)
+    })
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+}*/
