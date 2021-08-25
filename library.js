@@ -1,5 +1,7 @@
 import { yourAPIKey } from './config.js';
 const title ='john adams'
+const bookIdListRead = []
+const bookIdListFave = []
 
 const form = document.querySelector("#book-form")
 form.addEventListener("submit", e=>{
@@ -21,13 +23,15 @@ form.addEventListener("submit", e=>{
 
 function renderBooks(books){
     books.forEach(element => {
+        //console.log(element)
          const book = {
             title: element.volumeInfo.title,
             authors: element.volumeInfo.authors,
             description: element.volumeInfo.description,
-            imageLinks: element.volumeInfo.imageLinks.thumbnail
+            imageLinks: element.volumeInfo.imageLinks.thumbnail,
+            bookID: element.id
         }
-        //console.log(book)
+        console.log(book)
         const bookList = document.querySelector('.book-display')
         //console.log(bookList)
         const detailedInfo = document.createElement('div')
@@ -73,39 +77,58 @@ function renderBooks(books){
 
         bookList.appendChild(detailedInfo)
 
-       libraryButton.addEventListener('click',  e=>{
-            libraryButton.innerText='✓'
-            fetch("http://localhost:3000/library", {
-            method: "POST",
-            headers:{
-            "Content-Type":"application/json"
-            },
-            body:JSON.stringify(book)
-    })
-       })
+
+        libraryButton.addEventListener('click',  e=>{
+            const bookisinlist = bookIdListRead.includes(book.bookID)
+            if (bookisinlist === true) {
+                alert('This is a Double Read')
+            } else {
+                bookIdListRead.push(book.bookID)
+                libraryButton.innerText='✓'
+                fetch("http://localhost:3000/library", {
+                method: "POST",
+                headers:{
+                "Content-Type":"application/json"
+                },
+                body:JSON.stringify(book)
+                })
+            }
+
+        })
        
 
-       faveButton.addEventListener('click', e=>{
-            faveButton.innerText = '❤'
-            fetch("http://localhost:3000/favorites", {
-            method: "POST",
-            headers:{
-            "Content-Type":"application/json"
-            },
-            body:JSON.stringify(book)
-    })
-            
+        faveButton.addEventListener('click', e=>{
+            const bookisinlist = bookIdListFave.includes(book.bookID)
+            if (bookisinlist === true) {
+                alert('This is a Double Fave')
+            } else {
+                bookIdListFave.push(book.bookID)
+                faveButton.innerText = '❤'
+                fetch("http://localhost:3000/favorites", {
+                method: "POST",
+                headers:{
+                "Content-Type":"application/json"
+                },
+                body:JSON.stringify(book)
+                })
+            }
+        
         })
-
+        
     })
 }
 
+
+
 fetch("http://localhost:3000/library")
     .then(resp => resp.json())
-    .then(books => books.forEach(book=> addToRead(book)))
+    .then(books => books.forEach(book=> {
+        bookIdListRead.push(book.bookID)
+        addToRead(book)
+    }))
 
 function addToRead(book){
-    console.log(`clicked addToLibrary     ${book.title}`)
+    //console.log(`clicked addToLibrary     ${book.title}`)
     const wantToReadFlexContainer = document.querySelector("#to-read")
     const toRead = document.createElement('div')
     toRead.className = 'wants'
@@ -127,10 +150,13 @@ function addToRead(book){
 
 fetch("http://localhost:3000/favorites")
     .then(resp => resp.json())
-    .then(books => books.forEach(book=> addToFavorite(book)))
+    .then(books => books.forEach(book=> {
+        
+        addToFavorite(book)
+    }))
 
 function addToFavorite(book){
-    console.log(`clicked favorite     ${book.title}`)
+    //console.log(`clicked favorite     ${book.title}`)
     const favoritesFlexContainer = document.querySelector("#faves")
     const faves = document.createElement('div')
     faves.className = "favorites"
