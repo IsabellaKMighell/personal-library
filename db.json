@@ -1,12 +1,14 @@
 {
   "favorites": [
     {
-      
+      "title": "John Adams",
+      "authors": [
+        "David McCullough"
+      ],
+      "description": "Chronicles the life of America's second president, including his youth, his career as a Massachusetts farmer and lawyer, his marriage to Abigail, his rivalry with Thomas Jefferson, and his influence on the birth of the United States.",
+      "imageLinks": "http://books.google.com/books/content?id=GHMnz8G0GTcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "id": 1
     }
   ],
-  "library": [
-    {
-      
-    }
-  ]
+  "library": []
 }

@@ -89,21 +89,40 @@ function renderBooks(books){
 
 function addToRead(book){
     console.log(`clicked addToLibrary     ${book.title}`)
-    const wantToRead = document.querySelector('#want-to-read')
+    const wantToReadFlexContainer = document.querySelector("#to-read")
     const toRead = document.createElement('div')
-    toRead.id = 'to-read'
-    toRead.innerHTML = `<img src=${book.imageLinks} /> <div>${book.title}</div>`
-    wantToRead.appendChild(toRead)
+    toRead.className = 'wants'
+
+    const img = document.createElement('img')
+    img.src = book.imageLinks
+    const title = document.createElement('div')
+    title.innerText = book.title
+
+    toRead.append(img,title)
+    toRead.style.padding = "5px"
+
+    wantToReadFlexContainer.appendChild(toRead)
+    wantToReadFlexContainer.style.display = "flex"
+
 
 
 }
 function addToFavorite(book){
     console.log(`clicked favorite     ${book.title}`)
-    const favoriteBooks = document.querySelector('#favorite-books')
+    const favoritesFlexContainer = document.querySelector("#faves")
     const faves = document.createElement('div')
-    faves.id = 'faves'
-    faves.innerHTML = `<img src=${book.imageLinks} /> <div>${book.title}</div>`
-    favoriteBooks.appendChild(faves)
+    faves.className = "favorites"
+    
+    const img = document.createElement('img')
+    img.src = book.imageLinks
+    const title = document.createElement('div')
+    title.innerText = book.title
+
+    faves.append(img,title)
+    faves.style.padding = "5px"
+
+    favoritesFlexContainer.appendChild(faves)
+    favoritesFlexContainer.style.display="flex"
 }
 
 /*
