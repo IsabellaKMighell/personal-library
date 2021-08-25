@@ -15,7 +15,7 @@ input[type="submit" i] {
     border-width: 1px;
 }
 
-.button, #add-to-library{
+.button, #add-to-library{cd ..
     border-radius: 50%;
     background-color: rgb(43, 153, 226);
     color: white;
@@ -28,18 +28,5 @@ input[type="submit" i] {
     border-width: 1px ;
 
 }
-
-
-.flex-container {
-    display: flex;
-    background-color: DodgerBlue;
-  }
-
-.flex-container > div {
-    background-color: #f3f3f1;
-    margin: 10px;
-    padding: 20px;
-    font-size: 18px;
-  }
 
 
