@@ -8,7 +8,9 @@ form.addEventListener("submit", e=>{
     e.preventDefault();
     const userInput = e.target[0].value
     //console.log(userInput)
+    document.querySelector('.book-display').innerHTML = ''
     form.reset();
+    
     const info = `https://www.googleapis.com/books/v1/volumes?q=intitle:${userInput}&key=${yourAPIKey}`
     fetch(info)
     .then(resp => resp.json())
@@ -85,6 +87,9 @@ function renderBooks(books){
             } else {
                 bookIdListRead.push(book.bookID)
                 libraryButton.innerText='✓'
+
+                addToRead(book)
+
                 fetch("http://localhost:3000/library", {
                 method: "POST",
                 headers:{
@@ -92,18 +97,22 @@ function renderBooks(books){
                 },
                 body:JSON.stringify(book)
                 })
+                
             }
 
         })
        
 
         faveButton.addEventListener('click', e=>{
-            const bookisinlist = bookIdListFave.includes(book.bookID)
-            if (bookisinlist === true) {
+            const bookisinlistFave = bookIdListFave.includes(book.bookID)
+            if (bookisinlistFave === true) {
                 alert('This is a Double Fave')
             } else {
                 bookIdListFave.push(book.bookID)
                 faveButton.innerText = '❤'
+
+                addToFavorite(book)
+
                 fetch("http://localhost:3000/favorites", {
                 method: "POST",
                 headers:{
@@ -114,7 +123,7 @@ function renderBooks(books){
             }
         
         })
-        
+
     })
 }
 
@@ -151,7 +160,7 @@ function addToRead(book){
 fetch("http://localhost:3000/favorites")
     .then(resp => resp.json())
     .then(books => books.forEach(book=> {
-        
+        bookIdListFave.push(book.bookID)
         addToFavorite(book)
     }))
 
