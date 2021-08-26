@@ -12,14 +12,20 @@
   <body>
     <div class="display-container">
       <div id="header">
-        <h1>Library</h1>
-        <p>Keep track of what to read next using a virtual library</p>
+        <h1>LIBRARY</h1>
+        <nav>
+          <ul>
+            <li><a href="#favorite-books">favorite books</a></li>
+            <li><a href="#to-read">books to read</a></li>
+          </ul>
+        </nav>
+        <p><b>What are you reading next?</b></p>
       </div>
       <div id="book-form-container">
         <form id="book-form">
           <label><strong>Book Title: </strong></label>
           <input type="text" id="name-input" />
-          <input type="submit" value="Submit" />
+          <input type="submit" value="submit" class="all-buttons" />
         </form>
       </div>
       <div class="book-display">
@@ -36,13 +42,13 @@
     </div>
     <div class="library">
       <div id="favorite-books">
-        <h4>Favorite Books</h4>
+        <h4>FAVORITE BOOKS</h4>
         <div id="faves" class="flex-container">
           <!--add favorites here-->
         </div>
       </div>
       <div id="want-to-read">
-        <h4>Books to Read</h4>
+        <h4>BOOKS TO READ</h4>
         <div id="to-read" class="flex-container">
           <!--add favorites here-->
         </div>

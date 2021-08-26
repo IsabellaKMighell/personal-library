@@ -35,7 +35,7 @@ function renderBooks(books) {
         const bookList = document.querySelector(".book-display");
         //console.log(bookList)
         const detailedInfo = document.createElement("div");
-        detailedInfo.id = "detailed-info";
+        detailedInfo.className = "detailed-info";
 
         //image element
         const img = document.createElement("img");
@@ -46,23 +46,25 @@ function renderBooks(books) {
 
         const libraryButton = document.createElement("button");
         libraryButton.innerText = "▻";
-        libraryButton.id = "add-to-library";
+        libraryButton.className = "add-to-library";
 
         const bookTitleElement = document.createElement("span");
         bookTitleElement.innerText = book.title;
 
         const faveButton = document.createElement("button");
         faveButton.innerText = "♡";
-        faveButton.id = "favorite";
+        faveButton.className = "favorite";
 
         buttonsAndTitle.append(libraryButton, bookTitleElement, faveButton);
 
         const imgTitleDiv = document.createElement("div");
+        imgTitleDiv.style.padding = '10px'
+        imgTitleDiv.style.width = '148px'
         imgTitleDiv.append(img, buttonsAndTitle);
 
         //book description
         const bookDescription = document.createElement("div");
-        bookDescription.innerText = book.description;
+        bookDescription.innerHTML = `<b>Description:</b> ${book.description}`;
 
         detailedInfo.append(imgTitleDiv, bookDescription);
         detailedInfo.style.display = "flex";
@@ -112,6 +114,8 @@ function renderBooks(books) {
     });
 }
 
+
+//Want to read library
 fetch("http://localhost:3000/library")
     .then((resp) => resp.json())
     .then((books) =>
@@ -132,13 +136,21 @@ function addToRead(book) {
     const title = document.createElement("div");
     title.innerText = book.title;
 
-    toRead.append(img, title);
+    const deleteButton = document.createElement('button')
+    deleteButton.innerText = "x"
+    deleteButton.className = "all-buttons"
+    deleteButton.addEventListener('click', e => removeLibrary(e, book, deleteButton, img, title))
+    
+
+    toRead.append(img, title, deleteButton);
     toRead.style.padding = "5px";
 
     wantToReadFlexContainer.appendChild(toRead);
     wantToReadFlexContainer.style.display = "flex";
 }
 
+
+//Favorites Library
 fetch("http://localhost:3000/favorites")
     .then((resp) => resp.json())
     .then((books) =>
@@ -158,10 +170,46 @@ function addToFavorite(book) {
     img.src = book.imageLinks;
     const title = document.createElement("div");
     title.innerText = book.title;
+    
+    const deleteButton = document.createElement('button')
+    deleteButton.innerText = "x"
+    deleteButton.className = "all-buttons"
+    deleteButton.addEventListener('click', e => removeFavorite(e, book, deleteButton, img, title))
+    
 
-    faves.append(img, title);
+    faves.append(img, title, deleteButton);
     faves.style.padding = "5px";
 
     favoritesFlexContainer.appendChild(faves);
     favoritesFlexContainer.style.display = "flex";
+}
+
+function removeLibrary(e, book, deleteButton, img, title){
+    deleteButton.remove()
+    img.remove()
+    title.remove()
+
+    fetch(`http://localhost:3000/library/${book.id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': `application/json`
+        }
+    })
+    .then((resp) => resp.json())
+    .then((data) =>console.log(data))
+}
+
+function removeFavorite(e, book, deleteButton, img, title){
+    deleteButton.remove()
+    img.remove()
+    title.remove()
+
+    fetch(`http://localhost:3000/favorites/${book.id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': `application/json`
+        }
+    })
+    .then((resp) => resp.json())
+    .then((data) =>console.log(data))
 }
