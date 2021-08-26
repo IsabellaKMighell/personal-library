@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script defer type="module" src="./library.js"></script>
-    <script defer type="module" src="./config.js"></script>
-    <title>Personal Library</title>
-  </head>
-  <body>
-    <div class="display-container">
-      <div id="header">
-        <h1>LIBRARY</h1>
-        <nav>
-          <ul>
-            <li><a href="#favorite-books">favorite books</a></li>
-            <li><a href="#to-read">books to read</a></li>
-            <li><a href='#book-form'>search</a></li>
-          </ul>
-        </nav>
-        <p><b>What are you reading next?</b></p>
-      </div>
-      <div id="book-form-container">
-        <form id="book-form">
-          <label><strong>Book Title: </strong></label>
-          <input type="text" id="name-input" />
-          <input type="submit" value="submit" class="all-buttons" />
-        </form>
-      </div>
-      <div class="book-display">
-        <!-- <div id="detailed-info">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script defer type="module" src="./library.js"></script>
+		<script defer type="module" src="./config.js"></script>
+		<title>Personal Library</title>
+	</head>
+	<body>
+		<div class="display-container">
+			<div id="header">
+				<h1>LIBRARY</h1>
+				<nav>
+					<ul>
+						<li><a href="#favorite-books">favorite books</a></li>
+						<li><a href="#to-read">books to read</a></li>
+						<li><a href="#book-form">search</a></li>
+					</ul>
+				</nav>
+				<p><b>What are you reading next?</b></p>
+
+				<div id="book-form-container">
+					<form id="book-form">
+						<label><strong>Book Title: </strong></label>
+						<input type="text" id="name-input" />
+						<input
+							type="submit"
+							value="submit"
+							class="all-buttons"
+						/>
+					</form>
+				</div>
+			</div>
+
+			<div class="book-display">
+				<!-- <div id="detailed-info">
                     <img src="http://books.google.com/books/content?id=GHMnz8G0GTcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" alt="">
                     <p>
                         <strong><button id="add-to-library">▻</button></strong>
@@ -39,21 +45,21 @@
                     </p>
                     <p>Chronicles the life of America's second president, including his youth, his career as a Massachusetts farmer and lawyer, his marriage to Abigail, his rivalry with Thomas Jefferson, and his influence on the birth of the United States.</p>
                 </div> -->
-      </div>
-    </div>
-    <div class="library">
-      <div id="favorite-books">
-        <h4>FAVORITE BOOKS</h4>
-        <div id="faves" class="flex-container">
-          <!--add favorites here-->
-        </div>
-      </div>
-      <div id="want-to-read">
-        <h4>BOOKS TO READ</h4>
-        <div id="to-read" class="flex-container">
-          <!--add favorites here-->
-        </div>
-      </div>
-    </div>
-  </body>
+			</div>
+		</div>
+		<div class="library">
+			<div id="favorite-books">
+				<h4>FAVORITE BOOKS</h4>
+				<div id="faves" class="flex-container">
+					<!--add favorites here-->
+				</div>
+			</div>
+			<div id="want-to-read">
+				<h4>BOOKS TO READ</h4>
+				<div id="to-read" class="flex-container">
+					<!--add favorites here-->
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

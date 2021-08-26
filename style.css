@@ -1,151 +1,156 @@
-body{
-    text-align: center;
-    font-family: American Typewriter, serif;
-    font-variant: small-caps;
-    background-image: url("https://media.altphotos.com/cache/images/2017/03/16/18/1504/water-foam-sea.jpg");
+body {
+	text-align: center;
+	font-family: American Typewriter, serif;
+	font-variant: small-caps;
+	background-image: url("https://media.altphotos.com/cache/images/2017/03/16/18/1504/water-foam-sea.jpg");
+	margin: 0px;
+	padding: 0px;
 }
 
 .all-buttons {
-    background-color:rgb(17, 98, 136); 
-    color: white;
-    border-radius: 50%;
-    border-width: 1px;
-    text-decoration: none;
-    display: inline-block;
-    transition-duration: 0.4s;
-    cursor: pointer;
+	background-color: rgb(17, 98, 136);
+	color: white;
+	border-radius: 50%;
+	border-width: 1px;
+	text-decoration: none;
+	display: inline-block;
+	transition-duration: 0.4s;
+	cursor: pointer;
 }
 
-  
 .all-buttons:hover {
-    background-color:black;
-    color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	background-color: black;
+	color: white;
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+		0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* .display-container {
+	background-color: white;
+} */
 
-.display-container{
-    background-color: white;
+h1 {
+	background-color: rgb(17, 98, 136);
+	color: whitesmoke;
+	padding: 5px;
+	opacity: 0.8;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	height: 50px;
 }
-
-h1{
-    background-color: rgb(17, 98, 136);
-    color: whitesmoke;
-    padding: 5px;
-    opacity: 0.8;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    height: 50px;
-}
-
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(0, 0, 0);
-    height: 40px;
-    
-  }
-
-  
-li a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-li a:hover:not(.active) {
-    background-color: rgb(17, 98, 136);
-  }
-  
-  .sticky{
-    position: fixed;
-    top: 0;
-    width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: rgb(0, 0, 0);
+	height: 40px;
 }
 
+li a {
+	float: left;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
 
-#book-form{
-    padding-bottom: 10px;
+li a:hover:not(.active) {
+	background-color: rgb(17, 98, 136);
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+#book-form {
+	padding-bottom: 10px;
 }
 input[type="submit" i] {
-    border-radius: 8 px;
-    background-color: rgb(17, 98, 136);
-    color: white;
-    text-align: center;
-    border-width: 1px;
+	border-radius: 8 px;
+	background-color: rgb(17, 98, 136);
+	color: white;
+	text-align: center;
+	border-width: 1px;
 }
 
-.button, .add-to-library{
-    border-radius: 50%;
-    background-color: rgb(17, 98, 136);
-    color: white;
-    border-width: 1px;
-    width: 30px;
-    height: 30px;
-    margin: 10px;
+.button,
+.add-to-library {
+	border-radius: 50%;
+	background-color: rgb(17, 98, 136);
+	color: white;
+	border-width: 1px;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
 }
-.button, .add-to-library:hover{
-    background-color:black;
-    color: white; 
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+.button,
+.add-to-library:hover {
+	background-color: black;
+	color: white;
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+		0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.button, .favorite{
-    border-radius: 50%;
-    background-color: rgb(17, 98, 136);
-    color:rgb(255, 198, 208);
-    border-width: 1px ;
-    width: 30px;
-    height: 30px;
-    margin: 10px;
-
+.button,
+.favorite {
+	border-radius: 50%;
+	background-color: rgb(17, 98, 136);
+	color: rgb(255, 198, 208);
+	border-width: 1px;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
 }
-.button, .favorite:hover{
-    background-color:black;
-    color:rgb(255, 198, 208);
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+.button,
+.favorite:hover {
+	background-color: black;
+	color: rgb(255, 198, 208);
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+		0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*library divs*/
 
-h4{
-    font-size: 18px;
-    background-color: rgb(17, 98, 136);
-    color: whitesmoke;
-    padding: 5px;
-    opacity: 0.8;
+h4 {
+	font-size: 18px;
+	background-color: rgb(17, 98, 136);
+	color: whitesmoke;
+	padding: 5px;
+	opacity: 0.8;
 }
 
-
-#favorite-books{
-    background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg")
-    
-
+#favorite-books {
+	background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg");
 }
-#want-to-read{
-    background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg")
+#want-to-read {
+	background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg");
 }
-
 
 /*found how to do this using stack overflow -> https://stackoverflow.com/questions/29546550/flexbox-4-items-per-row*/
 .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .flex-container > div {
-    flex: 1 0 21%; 
-    margin: 10px;
-    height: 250px;
-  }
+	display: flex;
+	flex-wrap: wrap;
+}
 
-.detailed-info{
-    margin-right: 100px;
-    margin-left: 100px;
+.flex-container > div {
+	flex: 1 0 21%;
+	margin: 10px;
+	height: 250px;
+}
+
+.detailed-info {
+	margin-right: 100px;
+	margin-left: 100px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	box-shadow: rgb(255, 255, 255) 0px 8px 24px;
+	background-color: white;
+}
+#header {
+	background-color: white;
 }
