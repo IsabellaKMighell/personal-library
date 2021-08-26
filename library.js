@@ -44,18 +44,22 @@ function renderBooks(books) {
         //buttons and book title
         const buttonsAndTitle = document.createElement("div");
 
-        const libraryButton = document.createElement("button");
-        libraryButton.innerText = "▻";
-        libraryButton.className = "add-to-library";
-
-        const bookTitleElement = document.createElement("span");
+        const bookTitleElement = document.createElement("p");
         bookTitleElement.innerText = book.title;
+
+        const libraryButton = document.createElement("button");
+        libraryButton.innerHTML = `<span>▻</span>`;
+        libraryButton.className = "add-to-library";
+        libraryButton.style.padding = '5px'
+
+
 
         const faveButton = document.createElement("button");
         faveButton.innerText = "♡";
         faveButton.className = "favorite";
+        faveButton.style.padding= '5px'
 
-        buttonsAndTitle.append(libraryButton, bookTitleElement, faveButton);
+        buttonsAndTitle.append(bookTitleElement, libraryButton, faveButton);
 
         const imgTitleDiv = document.createElement("div");
         imgTitleDiv.style.padding = '10px'
@@ -65,6 +69,8 @@ function renderBooks(books) {
         //book description
         const bookDescription = document.createElement("div");
         bookDescription.innerHTML = `<b>Description:</b> ${book.description}`;
+        bookDescription.style.textAlign="left"
+        bookDescription.style.paddingTop="10px"
 
         detailedInfo.append(imgTitleDiv, bookDescription);
         detailedInfo.style.display = "flex";
