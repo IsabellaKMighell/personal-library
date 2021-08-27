@@ -220,3 +220,20 @@ function removeFavorite(e, book, faves) {
 		.then((resp) => resp.json())
 		.then((data) => console.log(data));
 }
+
+window.addEventListener('scroll', (e)=>{
+    const navBar = document.querySelector("#header > nav")
+    const pos = window.pageYOffset;
+
+            console.log(pos)
+
+            if (pos>55){
+
+                navBar.className="sticky"
+
+            }
+            else{
+                navBar.className=""
+            }
+
+})
