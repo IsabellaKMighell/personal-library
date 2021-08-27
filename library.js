@@ -5,217 +5,218 @@ const bookIdListFave = [];
 
 const form = document.querySelector("#book-form");
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const userInput = e.target[0].value;
-    //console.log(userInput)
-    document.querySelector(".book-display").innerHTML = "";
-    form.reset();
+	e.preventDefault();
+	const userInput = e.target[0].value;
+	//console.log(userInput)
+	document.querySelector(".book-display").innerHTML = "";
+	form.reset();
 
-    const info = `https://www.googleapis.com/books/v1/volumes?q=intitle:${userInput}&key=${yourAPIKey}`;
-    fetch(info)
-        .then((resp) => resp.json())
-        .then((data) => {
-            //console.log(data)
-            //console.log(data.items)
-            renderBooks(data.items);
-        });
+	const info = `https://www.googleapis.com/books/v1/volumes?q=intitle:${userInput}&key=${yourAPIKey}`;
+	fetch(info)
+		.then((resp) => resp.json())
+		.then((data) => {
+			//console.log(data)
+			//console.log(data.items)
+			renderBooks(data.items);
+		});
+
+	const background = document.querySelector(".book-display");
+	background.style.padding = "10px";
 });
 
 function renderBooks(books) {
-    books.forEach((element) => {
-        //console.log(element)
-        const book = {
-            title: element.volumeInfo.title,
-            authors: element.volumeInfo.authors,
-            description: element.volumeInfo.description,
-            imageLinks: element.volumeInfo.imageLinks.thumbnail,
-            bookID: element.id,
-        };
-        console.log(book);
-        const bookList = document.querySelector(".book-display");
-        //console.log(bookList)
-        const detailedInfo = document.createElement("div");
-        detailedInfo.className = "detailed-info";
+	books.forEach((element) => {
+		//console.log(element)
+		const book = {
+			title: element.volumeInfo.title,
+			authors: element.volumeInfo.authors,
+			description: element.volumeInfo.description,
+			imageLinks: element.volumeInfo.imageLinks.thumbnail,
+			bookID: element.id,
+		};
+		console.log(book);
+		const bookList = document.querySelector(".book-display");
+		//console.log(bookList)
+		const detailedInfo = document.createElement("div");
+		detailedInfo.className = "detailed-info";
 
-        //image element
-        const img = document.createElement("img");
-        img.src = book.imageLinks;
+		//image element
+		const img = document.createElement("img");
+		img.src = book.imageLinks;
 
-        //buttons and book title
-        const buttonsAndTitle = document.createElement("div");
+		//buttons and book title
+		const buttonsAndTitle = document.createElement("div");
 
-        const bookTitleElement = document.createElement("p");
-        bookTitleElement.innerText = book.title;
+		const bookTitleElement = document.createElement("p");
+		bookTitleElement.innerText = book.title;
+		bookTitleElement.id = "bookTitle";
 
-        const libraryButton = document.createElement("button");
-        libraryButton.innerHTML = `<span>▻</span>`;
-        libraryButton.className = "add-to-library";
-        libraryButton.style.padding = '5px'
+		const libraryButton = document.createElement("button");
+		libraryButton.innerHTML = `<span>▻</span>`;
+		libraryButton.className = "add-to-library";
+		//libraryButton.style.padding = "5px";
 
+		const faveButton = document.createElement("button");
+		faveButton.innerText = "♡";
+		faveButton.className = "favorite";
+		//faveButton.style.padding= '5px'
 
+		buttonsAndTitle.append(bookTitleElement, libraryButton, faveButton);
 
-        const faveButton = document.createElement("button");
-        faveButton.innerText = "♡";
-        faveButton.className = "favorite";
-        faveButton.style.padding= '5px'
+		const imgTitleDiv = document.createElement("div");
+		//imgTitleDiv.style.padding = "10px";
+		imgTitleDiv.style.width = "148px";
+		imgTitleDiv.append(img, buttonsAndTitle);
 
-        buttonsAndTitle.append(bookTitleElement, libraryButton, faveButton);
+		//book description
+		const bookDescription = document.createElement("div");
+		bookDescription.innerHTML = `<b>Description:</b> ${book.description}`;
+		bookDescription.className = "description";
+		//bookDescription.style.textAlign = "left";
+		//bookDescription.style.paddingTop = "10px";
 
-        const imgTitleDiv = document.createElement("div");
-        imgTitleDiv.style.padding = '10px'
-        imgTitleDiv.style.width = '148px'
-        imgTitleDiv.append(img, buttonsAndTitle);
+		detailedInfo.append(imgTitleDiv, bookDescription);
+		//detailedInfo.style.display = "flex";
+		//detailedInfo.style.padding = "10px";
 
-        //book description
-        const bookDescription = document.createElement("div");
-        bookDescription.innerHTML = `<b>Description:</b> ${book.description}`;
-        bookDescription.style.textAlign="left"
-        bookDescription.style.paddingTop="10px"
+		bookList.appendChild(detailedInfo);
 
-        detailedInfo.append(imgTitleDiv, bookDescription);
-        detailedInfo.style.display = "flex";
-        detailedInfo.style.padding = "10px";
+		libraryButton.addEventListener("click", (e) => {
+			const bookisinlist = bookIdListRead.includes(book.bookID);
+			if (bookisinlist === true) {
+				alert(`${book.title} is already on the Books to Read list`);
+			} else {
+				bookIdListRead.push(book.bookID);
+				libraryButton.innerText = "✓";
 
-        bookList.appendChild(detailedInfo);
+				addToRead(book);
 
-        libraryButton.addEventListener("click", (e) => {
-            const bookisinlist = bookIdListRead.includes(book.bookID);
-            if (bookisinlist === true) {
-                alert(`${book.title} is already on the Books to Read list`);
-            } else {
-                bookIdListRead.push(book.bookID);
-                libraryButton.innerText = "✓";
+				fetch("http://localhost:3000/library", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(book),
+				});
+			}
+		});
 
-                addToRead(book);
+		faveButton.addEventListener("click", (e) => {
+			const bookisinlistFave = bookIdListFave.includes(book.bookID);
+			if (bookisinlistFave === true) {
+				alert(`${book.title} is already on the Favorite Book list`);
+			} else {
+				bookIdListFave.push(book.bookID);
+				faveButton.innerText = "❤";
 
-                fetch("http://localhost:3000/library", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(book),
-                });
-            }
-        });
+				addToFavorite(book);
 
-        faveButton.addEventListener("click", (e) => {
-            const bookisinlistFave = bookIdListFave.includes(book.bookID);
-            if (bookisinlistFave === true) {
-                alert(`${book.title} is already on the Favorite Book list`);
-            } else {
-                bookIdListFave.push(book.bookID);
-                faveButton.innerText = "❤";
-
-                addToFavorite(book);
-
-                fetch("http://localhost:3000/favorites", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(book),
-                });
-            }
-        });
-    });
+				fetch("http://localhost:3000/favorites", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(book),
+				});
+			}
+		});
+	});
 }
-
 
 //Want to read library
 fetch("http://localhost:3000/library")
-    .then((resp) => resp.json())
-    .then((books) =>
-        books.forEach((book) => {
-            bookIdListRead.push(book.bookID);
-            addToRead(book);
-        })
-    );
+	.then((resp) => resp.json())
+	.then((books) =>
+		books.forEach((book) => {
+			bookIdListRead.push(book.bookID);
+			addToRead(book);
+		})
+	);
 
 function addToRead(book) {
-    //console.log(`clicked addToLibrary     ${book.title}`)
-    const wantToReadFlexContainer = document.querySelector("#to-read");
-    const toRead = document.createElement("div");
-    toRead.className = "wants";
+	//console.log(`clicked addToLibrary     ${book.title}`)
+	const wantToReadFlexContainer = document.querySelector("#to-read");
+	const toRead = document.createElement("div");
+	toRead.className = "wants";
 
-    const img = document.createElement("img");
-    img.src = book.imageLinks;
-    const title = document.createElement("div");
-    title.innerText = book.title;
+	const img = document.createElement("img");
+	img.src = book.imageLinks;
+	const title = document.createElement("div");
+	title.innerText = book.title;
 
-    const deleteButton = document.createElement('button')
-    deleteButton.innerText = "x"
-    deleteButton.className = "all-buttons"
-    deleteButton.addEventListener('click', e => removeLibrary(e, book, deleteButton, img, title))
-    
+	const deleteButton = document.createElement("button");
+	deleteButton.innerText = "x";
+	deleteButton.className = "all-buttons";
 
-    toRead.append(img, title, deleteButton);
-    toRead.style.padding = "5px";
+	toRead.append(img, title, deleteButton);
+	//toRead.style.padding = "5px";
 
-    wantToReadFlexContainer.appendChild(toRead);
-    wantToReadFlexContainer.style.display = "flex";
+	wantToReadFlexContainer.appendChild(toRead);
+	wantToReadFlexContainer.style.display = "flex";
+
+	deleteButton.addEventListener("click", (e) =>
+		removeLibrary(e, book, toRead)
+	);
 }
-
 
 //Favorites Library
 fetch("http://localhost:3000/favorites")
-    .then((resp) => resp.json())
-    .then((books) =>
-        books.forEach((book) => {
-            bookIdListFave.push(book.bookID);
-            addToFavorite(book);
-        })
-    );
+	.then((resp) => resp.json())
+	.then((books) =>
+		books.forEach((book) => {
+			bookIdListFave.push(book.bookID);
+			addToFavorite(book);
+		})
+	);
 
 function addToFavorite(book) {
-    //console.log(`clicked favorite     ${book.title}`)
-    const favoritesFlexContainer = document.querySelector("#faves");
-    const faves = document.createElement("div");
-    faves.className = "favorites";
+	//console.log(`clicked favorite     ${book.title}`)
+	const favoritesFlexContainer = document.querySelector("#faves");
+	const faves = document.createElement("div");
+	faves.className = "favorites";
 
-    const img = document.createElement("img");
-    img.src = book.imageLinks;
-    const title = document.createElement("div");
-    title.innerText = book.title;
-    
-    const deleteButton = document.createElement('button')
-    deleteButton.innerText = "x"
-    deleteButton.className = "all-buttons"
-    deleteButton.addEventListener('click', e => removeFavorite(e, book, deleteButton, img, title))
-    
+	const img = document.createElement("img");
+	img.src = book.imageLinks;
+	const title = document.createElement("div");
+	title.innerText = book.title;
 
-    faves.append(img, title, deleteButton);
-    faves.style.padding = "5px";
+	const deleteButton = document.createElement("button");
+	deleteButton.innerText = "x";
+	deleteButton.className = "all-buttons";
 
-    favoritesFlexContainer.appendChild(faves);
-    favoritesFlexContainer.style.display = "flex";
+	faves.append(img, title, deleteButton);
+	//faves.style.padding = "5px";
+
+	favoritesFlexContainer.appendChild(faves);
+	favoritesFlexContainer.style.display = "flex";
+
+	deleteButton.addEventListener("click", (e) =>
+		removeFavorite(e, book, faves)
+	);
 }
 
-function removeLibrary(e, book, deleteButton, img, title){
-    deleteButton.remove()
-    img.remove()
-    title.remove()
+function removeLibrary(e, book, toRead) {
+	toRead.remove();
 
-    fetch(`http://localhost:3000/library/${book.id}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': `application/json`
-        }
-    })
-    .then((resp) => resp.json())
-    .then((data) =>console.log(data))
+	fetch(`http://localhost:3000/library/${book.id}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": `application/json`,
+		},
+	})
+		.then((resp) => resp.json())
+		.then((data) => console.log(data));
 }
 
-function removeFavorite(e, book, deleteButton, img, title){
-    deleteButton.remove()
-    img.remove()
-    title.remove()
+function removeFavorite(e, book, faves) {
+	faves.remove();
 
-    fetch(`http://localhost:3000/favorites/${book.id}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': `application/json`
-        }
-    })
-    .then((resp) => resp.json())
-    .then((data) =>console.log(data))
+	fetch(`http://localhost:3000/favorites/${book.id}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": `application/json`,
+		},
+	})
+		.then((resp) => resp.json())
+		.then((data) => console.log(data));
 }

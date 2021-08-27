@@ -1,8 +1,9 @@
 body {
 	text-align: center;
-	font-family: American Typewriter, serif;
-	font-variant: small-caps;
-	background-image: url("https://media.altphotos.com/cache/images/2017/03/16/18/1504/water-foam-sea.jpg");
+	font-family: Tahoma, sans-serif;
+	/* font-family: American Typewriter, serif;
+	font-variant: small-caps; */
+
 	margin: 0px;
 	padding: 0px;
 }
@@ -30,12 +31,12 @@ body {
 } */
 
 h1 {
-	background-color: rgb(17, 98, 136);
-	color: whitesmoke;
+	background-color: white;
+	color: black;
 	padding: 5px;
 	opacity: 0.8;
 	padding-bottom: 0px;
-	margin-bottom: 0px;
+	margin: 0px;
 	height: 50px;
 }
 
@@ -44,7 +45,7 @@ ul {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: rgb(0, 0, 0);
+	background-color: #344152;
 	height: 40px;
 }
 
@@ -87,6 +88,7 @@ input[type="submit" i] {
 	width: 30px;
 	height: 30px;
 	margin: 10px;
+	padding: 5px;
 }
 .button,
 .add-to-library:hover {
@@ -105,6 +107,7 @@ input[type="submit" i] {
 	width: 30px;
 	height: 30px;
 	margin: 10px;
+	padding: 5px;
 }
 .button,
 .favorite:hover {
@@ -118,17 +121,22 @@ input[type="submit" i] {
 
 h4 {
 	font-size: 18px;
-	background-color: rgb(17, 98, 136);
+	background-color: #26466d;
 	color: whitesmoke;
 	padding: 5px;
 	opacity: 0.8;
+	margin: 0px;
 }
 
 #favorite-books {
-	background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg");
+	/* background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg"); */
+	padding: 0px;
+	margin: 0px;
+	background-color: #f0f8ff;
 }
 #want-to-read {
-	background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg");
+	/* background-image: url("https://getwallpapers.com/wallpaper/full/1/d/9/1006788-textured-wallpaper-backgrounds-2560x1600-for-desktop.jpg"); */
+	background-color: #f0f8ff;
 }
 
 /*found how to do this using stack overflow -> https://stackoverflow.com/questions/29546550/flexbox-4-items-per-row*/
@@ -138,19 +146,49 @@ h4 {
 }
 
 .flex-container > div {
-	flex: 1 0 21%;
-	margin: 10px;
+	/* flex: 1 0 21%; */
+	margin: auto;
+	/* padding-top: 17px; */
+	padding: 17px 10px 10px 10px;
+	/* padding-bottom: 10px; */
 	height: 250px;
+	width: 200px;
 }
 
 .detailed-info {
-	margin-right: 100px;
-	margin-left: 100px;
+	margin-right: 200px;
+	margin-left: 200px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	box-shadow: rgb(255, 255, 255) 0px 8px 24px;
 	background-color: white;
+	padding: 20px;
+	display: flex;
 }
 #header {
 	background-color: white;
+}
+.description {
+	text-align: left;
+	padding-left: 15px;
+}
+
+.book-display {
+	background-image: url("water-foam-sea.jpg");
+}
+#faves {
+	padding-left: 150px;
+	padding-right: 150px;
+	margin: auto;
+}
+#to-read {
+	padding-left: 150px;
+	padding-right: 150px;
+	margin: auto;
+}
+.library {
+	margin: auto;
+}
+#bookTitle {
+	font-weight: bold;
 }

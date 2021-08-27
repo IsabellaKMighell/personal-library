@@ -1,4 +1,150 @@
 {
-  "favorites": [],
-  "library": []
+  "favorites": [
+    {
+      "title": "I Survived the American Revolution, 1776 (I Survived #15)",
+      "authors": [
+        "Lauren Tarshis"
+      ],
+      "description": "Bestselling author Lauren Tarshis tackles the American Revolution in this latest installment of the groundbreaking, New York Times bestselling I Survived series.",
+      "imageLinks": "http://books.google.com/books/content?id=tqn8DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "tqn8DQAAQBAJ",
+      "id": 2
+    },
+    {
+      "title": "New York 1776",
+      "authors": [
+        "David Smith"
+      ],
+      "description": "General Sir William Howe's New York campaign gave the British their best chance of destroying the Continental Army and George Washington's resistance to colonial power. Howe succeeded in dividing the Continentals, defeated them on Long Island and forced Washington to retreat to Brooklyn Heights. Under siege there, Washington successfully crossed the East River to Manhattan but soon had to fall back on Harlem Heights. After a few weeks Howe forced the Continentals north to White Plains and defeated them again. However, he allowed Washington to withdraw and preserve his army when a more aggressive pursuit could have ended the war. Instead, with the British army rapidly weakening and facing huge manpower shortages, Washington emerged from a succession of defeats to produce what was ultimately a war-winning strategy. The author provides fascinating insights into a unique campaign in which a string of British victories ultimately led to failure and defeat.",
+      "imageLinks": "http://books.google.com/books/content?id=NbPvCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "NbPvCwAAQBAJ",
+      "id": 3
+    },
+    {
+      "title": "Harry S. Truman",
+      "authors": [
+        "Robert H. Ferrell"
+      ],
+      "description": "Few U.S. presidents have captured the imagination of the American people as has Harry S. Truman, “the man from Missouri.” In this major new biography, Robert H. Ferrell, widely regarded as an authority on the thirty-third president, challenges the popular characterization of Truman as a man who rarely sought the offices he received, revealing instead a man who—with modesty, commitment to service, and basic honesty—moved with method and system toward the presidency. Truman was ambitious in the best sense of the word. His powerful commitment to service was accompanied by a remarkable shrewdness and an exceptional ability to judge people. He regarded himself as a consummate politician, a designation of which he was proud. While in Washington, he never succumbed to the “Potomac fever” that swelled the heads of so many officials in that city. A scrupulously honest man, Truman exhibited only one lapse when, at the beginning of 1941, he padded his Senate payroll by adding his wife and later his sister. From his early years on the family farm through his pivotal decision to use the atomic bomb in World War II, Truman’s life was filled with fascinating events. Ferrell’s exhaustive research offers new perspectives on many key episodes in Truman’s career, including his first Senate term and the circumstances surrounding the Truman Doctrine and the Marshall Plan. In addition, Ferrell taps many little-known sources to relate the intriguing story of the machinations by which Truman gained the vice presidential nomination in 1944, a position which put him a heartbeat away from the presidency. No other historian has ever demonstrated such command over the vast amounts of material that Robert Ferrell brings to bear on the unforgettable story of Truman’s life. Based upon years of research in the Truman Library and the study of many never-before-used primary sources, Harry S. Truman is destined to become the authoritative account of the nation’s favorite president.",
+      "imageLinks": "http://books.google.com/books/content?id=7UXSMj3OF4oC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "7UXSMj3OF4oC",
+      "id": 16
+    },
+    {
+      "title": "Margaret Truman's Internship in Murder",
+      "authors": [
+        "Margaret Truman",
+        "Donald Bain"
+      ],
+      "description": "Laura is a young intern in Washington, D.C., working for handsome and likable Congressman Hal Gannon. Laura falls for the charming Gannon, but when she catches a stewardess at Gannon's apartment, she vows to destroy him. Private investigator Robert Brixton is a former cop who has also worked for the FBI. When Laura goes missing, Brixton is hired by Laura's family to gain insight into the case that the police might have missed. Brixton tracks down rumors about Gannon-a staunchly moral \"family advocate\" according to his political position, but a womanizer according to gossip-but the congressman vehemently denies having anything untoward to do with Laura. Then Laura is found dead in the congressional cemetery, and many more questions are raised. . . Donald Bain thrills again with Margaret Truman's Internship in Murder, the riveting next installment in the Margaret Truman's beloved Capital Crimes series. At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied.",
+      "imageLinks": "http://books.google.com/books/content?id=OBB4BgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "OBB4BgAAQBAJ",
+      "id": 19
+    }
+  ],
+  "library": [
+    {
+      "title": "Seventeen Seventy-six",
+      "authors": [
+        "David McCullough"
+      ],
+      "description": "Draws on personal correspondence and period diaries to present a history of the American Revolution that includes the siege of Boston, the American defeat at Brooklyn, the retreat across New Jersey, and the American victory at Trenton.",
+      "imageLinks": "http://books.google.com/books/content?id=R1Jk-A4R5AYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "R1Jk-A4R5AYC",
+      "id": 1
+    },
+    {
+      "title": "1776",
+      "authors": [
+        "David McCullough"
+      ],
+      "description": "In 1776 the American Revolution against British rule shook the world - and the United States was born. David McCullogh depicts the events of that fateful year with breathtaking imagination and flare, from the British decision to crush the Americans to the bitter setbacks and astonishing advances made by the patriot army. Whether King George III and George Washington or ordinary soldiers and their families, McCullogh recreates a cast of amazing characters on both sides, destroys myths and uses eyewitness reports to brilliant effect, making 1776 the most compelling account of this seismic conflict.",
+      "imageLinks": "http://books.google.com/books/content?id=K55JPgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "bookID": "K55JPgAACAAJ",
+      "id": 2
+    },
+    {
+      "title": "1776",
+      "authors": [
+        "Sherman Edwards",
+        "Peter Stone"
+      ],
+      "description": "The text of the musical play based on events during the second Continental Congress",
+      "imageLinks": "http://books.google.com/books/content?id=-dw4AQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      "bookID": "-dw4AQAAIAAJ",
+      "id": 3
+    },
+    {
+      "title": "Becoming America",
+      "authors": [
+        "Jon Butler"
+      ],
+      "description": "Multinational, profit-driven, materialistic, power-hungry, religiously plural: America today—and three hundred years ago. Jon Butler’s panoramic view of the mainland American colonies after 1680 transforms our customary picture of pre-Revolutionary America; it reveals a strikingly “modern“ character that belies the eighteenth-century quaintness fixed in history. Stressing the middle and late decades (the hitherto “dark ages”) of the American colonial experience, Butler shows us vast revolutionary changes in a society that, for ninety years before 1776, was already becoming America.",
+      "imageLinks": "http://books.google.com/books/content?id=y_sER8FuDIQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "y_sER8FuDIQC",
+      "id": 4
+    },
+    {
+      "title": "Yankee Doodle America",
+      "authors": [
+        "Wendell Minor"
+      ],
+      "description": "An A to Z of the American Revolution.",
+      "imageLinks": "http://books.google.com/books/content?id=rFDSDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "rFDSDgAAQBAJ",
+      "id": 5
+    },
+    {
+      "title": "If You Were There in 1776",
+      "authors": [
+        "Barbara Brenner"
+      ],
+      "description": "Period prints and drawings highlight a fascinating look back at what life was like in colonial America in 1776, exploring the ways in which children lived on a New England farm, a southern plantation, and on the frontier.",
+      "imageLinks": "http://books.google.com/books/content?id=8XykmnfHZzQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "8XykmnfHZzQC",
+      "id": 6
+    },
+    {
+      "title": "New York 1776",
+      "authors": [
+        "David Smith"
+      ],
+      "description": "General Sir William Howe's New York campaign gave the British their best chance of destroying the Continental Army and George Washington's resistance to colonial power. Howe succeeded in dividing the Continentals, defeated them on Long Island and forced Washington to retreat to Brooklyn Heights. Under siege there, Washington successfully crossed the East River to Manhattan but soon had to fall back on Harlem Heights. After a few weeks Howe forced the Continentals north to White Plains and defeated them again. However, he allowed Washington to withdraw and preserve his army when a more aggressive pursuit could have ended the war. Instead, with the British army rapidly weakening and facing huge manpower shortages, Washington emerged from a succession of defeats to produce what was ultimately a war-winning strategy. The author provides fascinating insights into a unique campaign in which a string of British victories ultimately led to failure and defeat.",
+      "imageLinks": "http://books.google.com/books/content?id=NbPvCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "NbPvCwAAQBAJ",
+      "id": 7
+    },
+    {
+      "title": "I Survived the American Revolution, 1776 (I Survived #15)",
+      "authors": [
+        "Lauren Tarshis"
+      ],
+      "description": "Bestselling author Lauren Tarshis tackles the American Revolution in this latest installment of the groundbreaking, New York Times bestselling I Survived series.",
+      "imageLinks": "http://books.google.com/books/content?id=tqn8DQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "tqn8DQAAQBAJ",
+      "id": 8
+    },
+    {
+      "title": "The 1776 Report",
+      "authors": [
+        "Larry P. Arnn",
+        "Carol Swain",
+        "Matthew Spalding"
+      ],
+      "description": "The 1776 Report is the official report of The President's Advisory 1776 Commission. Submitted to the President and released as a public document on January 18, 2021, the report explains the core principles of the American founding and how they have shaped American history, considers the leading challenges to these principles at home and abroad, and calls on all Americans to “restore our national unity by rekindling a brave and honest love for our country and by raising new generations of citizens who not only know the self-evident truths of our founding, but act worthy of them.” This edition features the original text with the addition of notes and commentary by Chair Larry P. Arnn, Vice Chair Carol Swain, and Executive Director Matthew Spalding.",
+      "imageLinks": "http://books.google.com/books/content?id=Zd4XEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "Zd4XEAAAQBAJ",
+      "id": 9
+    },
+    {
+      "title": "The American Idea of England, 1776-1840",
+      "authors": [
+        "Jennifer Clark"
+      ],
+      "description": "Arguing that American colonists who declared their independence in 1776 remained tied to England by both habit and inclination, Jennifer Clark traces the new Americans' struggle to come to terms with their loss of identity as British, and particularly English, citizens. Americans' attempts to negotiate the new Anglo-American relationship are revealed in letters, newspaper accounts, travel reports, essays, song lyrics, short stories and novels, which Clark suggests show them repositioning themselves in a transatlantic context newly defined by political revolution. Chapters examine political writing as a means for Americans to explore the Anglo-American relationship, the appropriation of John Bull by American writers, the challenge the War of 1812 posed to the reconstructed Anglo-American relationship, the Paper War between American and English authors that began around the time of the War of 1812, accounts by Americans lured to England as a place of poetry, story and history, and the work of American writers who dissected the Anglo-American relationship in their fiction. Carefully contextualised historically, Clark's persuasive study shows that any attempt to examine what it meant to be American in the New Nation, and immediately beyond, must be situated within the context of the Anglo-American relationship.",
+      "imageLinks": "http://books.google.com/books/content?id=IHneCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+      "bookID": "IHneCwAAQBAJ",
+      "id": 10
+    }
+  ]
 }
